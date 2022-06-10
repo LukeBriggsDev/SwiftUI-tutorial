@@ -17,5 +17,14 @@ struct LandmarksApp: App {
             ContentView()
                 .environmentObject(modelData)
         }
+        .commands {
+            LandmarkCommands()
+        }
+        
+        #if os(macOS)
+        Settings {
+            LandmarkSettings()
+        }
+        #endif
     }
 }
